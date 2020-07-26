@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NotFound = () => {
+const UsersTable = () => {
     return (
         <div>
-            NotFound
+            Users Table
         </div>
     )
 };
 
-export default NotFound;
+export default UsersTable;

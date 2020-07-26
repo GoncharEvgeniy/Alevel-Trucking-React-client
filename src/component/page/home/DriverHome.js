@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NotFound = () => {
+const DriverHome = () => {
     return (
         <div>
-            NotFound
+            Driver home
         </div>
     )
 };
 
-export default NotFound;
+export default DriverHome;

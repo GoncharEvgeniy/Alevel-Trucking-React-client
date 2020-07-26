@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NotFound = () => {
+const ManagerHome = () => {
     return (
         <div>
-            NotFound
+            Manager home
         </div>
     )
 };
 
-export default NotFound;
+export default ManagerHome;
