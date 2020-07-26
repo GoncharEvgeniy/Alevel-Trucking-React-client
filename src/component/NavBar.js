@@ -6,10 +6,11 @@ const NavBar = () => {
         <div>
             <h2>
                 <nav>
-                    <NavLink exact to="/" > Main </NavLink>
-                    <NavLink exact to="/login" > Login </NavLink>
-                    <NavLink exact to="/registration" > Registration </NavLink>
-                    <NavLink exact to="/home" > Home </NavLink>
+                    <NavLink exact to="/" >| Main |</NavLink>
+                    <NavLink exact to="/login" >| Login |</NavLink>
+                    <NavLink exact to="/registration" >| Registration |</NavLink>
+                    <NavLink exact to="/home" >| Home |</NavLink>
+                    <NavLink exact to="/logout" >| Logout |</NavLink>
                 </nav>
             </h2>
         </div>

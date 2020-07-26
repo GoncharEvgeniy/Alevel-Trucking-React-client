@@ -7,6 +7,7 @@ import Login from "./component/page/log/Login";
 import Registration from "./component/page/log/Registration";
 import Home from "./component/page/home/Home";
 import createHistory from "history/createBrowserHistory";
+import NotFound from "./component/page/notFound/NotFound";
 
 const history = createHistory();
 
@@ -28,6 +29,8 @@ function App() {
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/registration' component={Registration} />
                     <Route exact path='/home' component={Home} />
+                    <Route exact path='/logout' />
+                    <Route component={NotFound} />
                 </Switch>
             </div>
         </div>
