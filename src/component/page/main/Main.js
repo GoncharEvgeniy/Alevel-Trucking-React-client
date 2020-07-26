@@ -6,6 +6,6 @@ const Main = () => {
             MAIN
         </div>
     )
-}
+};
 
 export default Main;

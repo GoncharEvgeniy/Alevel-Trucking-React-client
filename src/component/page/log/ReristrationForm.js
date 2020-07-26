@@ -6,6 +6,6 @@ const RegistrationForm = () => {
             RegistrationForm
         </div>
     )
-}
+};
 
 export default RegistrationForm
