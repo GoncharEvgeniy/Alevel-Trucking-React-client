@@ -1,15 +1,26 @@
 import React from 'react'
 import LoginForm from "./LoginForm";
+import {connect} from "react-redux";
+import PropTypes from 'prop-types';
 
-const Login = () => {
+const Login = (props) => {
+
+    async function handleLogin(values) {
+        console.log(values);
+    }
+
     return(
         <div>
             LOGIN
             <div>
-                <LoginForm />
+                <LoginForm onSubmit={handleLogin}/>
             </div>
         </div>
     )
 };
 
-export default Login
+/*Login.propTypes = {
+    login: PropTypes.func.isRequired
+}*/
+
+export default connect()(Login)

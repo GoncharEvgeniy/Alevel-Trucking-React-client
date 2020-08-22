@@ -3,16 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Provider from "react-redux/lib/components/Provider";
 import store from './store/State';
+import {Provider} from "react-redux";
 
 ReactDOM.render(
-  <React.StrictMode>
-      <Provider store={store}>
-          <App />
-      </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
 
 serviceWorker.unregister();
