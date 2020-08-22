@@ -8,7 +8,7 @@ const LoginForm = (props) => {
             LoginForm
             <form onSubmit={handleSubmit}>
                 <Field
-                    name="userName"
+                    name="username"
                     component="input"
                     type="text" />
                 <Field
