@@ -1,6 +1,10 @@
 import { LOGIN } from "../action/ActionType";
 
-const securityReducer = (state, action) => {
+const initState = {
+    currentUser: {}
+};
+
+const securityReducer = (state = initState, action) => {
     switch (action.type) {
         case LOGIN:
             return {
@@ -10,3 +14,5 @@ const securityReducer = (state, action) => {
             return state;
     }
 };
+
+export default securityReducer;

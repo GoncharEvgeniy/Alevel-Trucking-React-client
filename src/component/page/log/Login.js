@@ -2,11 +2,13 @@ import React from 'react'
 import LoginForm from "./LoginForm";
 import {connect} from "react-redux";
 import PropTypes from 'prop-types';
+import {login} from "../../../action/SecurityAction";
 
 const Login = (props) => {
 
     async function handleLogin(values) {
         console.log(values);
+        props.login(values);
     }
 
     return(
@@ -19,8 +21,8 @@ const Login = (props) => {
     )
 };
 
-/*Login.propTypes = {
+Login.propTypes = {
     login: PropTypes.func.isRequired
-}*/
+}
 
-export default connect()(Login)
+export default connect(undefined, { login })(Login)
