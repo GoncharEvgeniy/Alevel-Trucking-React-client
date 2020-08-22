@@ -11,7 +11,11 @@ const LoginForm = (props) => {
                     name="userName"
                     component="input"
                     type="text" />
-                <button type="submit"> Login </button>
+                <Field
+                    name="password"
+                    component="input"
+                    type="password" />
+                <p/><button type="submit"> Login </button>
             </form>
         </div>
     )
