@@ -1,22 +1,29 @@
 import {LOGIN} from "./ActionType";
 import {URL_LOGIN} from "./ActionURL";
 import * as axios from "axios";
+import * as jwt from "jsonwebtoken";
 
 export const login = (userCrendetion) => async dispatch => {
     axios.post(URL_LOGIN, userCrendetion).then(
         response => {
-            console.log(response);
+            let token = response.headers.authorization.substring(7);
+            localStorage.setItem('LoginToken', token);
+            let user = jwt.decode(token);
+            console.log(user);
             dispatch({
                 type: LOGIN,
-                payload: userCrendetion
+                payload: user
             });
         },
         error => {
             console.log(error);
-            dispatch({
-                type: LOGIN,
-                payload: userCrendetion
-            });
+            if (error) {
+                dispatch({
+                    type: LOGIN,
+                    payload: {},
+                    error: {error: 'bad login or password'}
+                });
+            }
         }
     )
 };

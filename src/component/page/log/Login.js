@@ -7,7 +7,6 @@ import {login} from "../../../action/SecurityAction";
 const Login = (props) => {
 
     async function handleLogin(values) {
-        console.log(values);
         props.login(values);
     }
 
@@ -15,7 +14,7 @@ const Login = (props) => {
         <div>
             LOGIN
             <div>
-                <LoginForm onSubmit={handleLogin}/>
+                <LoginForm onSubmit={handleLogin} errors={props.errors}/>
             </div>
         </div>
     )
@@ -23,6 +22,12 @@ const Login = (props) => {
 
 Login.propTypes = {
     login: PropTypes.func.isRequired
-}
+};
 
-export default connect(undefined, { login })(Login)
+const mapStateToProps = (state) => {
+    return {
+        errors: state.security.errors
+    };
+};
+
+export default connect(mapStateToProps, { login })(Login)

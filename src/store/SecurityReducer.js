@@ -1,14 +1,17 @@
 import { LOGIN } from "../action/ActionType";
 
 const initState = {
-    currentUser: {}
+    currentUser: {},
+    errors: []
 };
 
 const securityReducer = (state = initState, action) => {
     switch (action.type) {
         case LOGIN:
             return {
-                ...state
+                ...state,
+                currentUser: action.payload,
+                errors: action.error
             };
         default:
             return state;

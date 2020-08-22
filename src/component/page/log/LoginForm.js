@@ -2,10 +2,15 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 const LoginForm = (props) => {
-    const { handleSubmit } = props;
+    const { handleSubmit, errors } = props;
+    let serverErrors = '';
+    if (errors !== undefined && errors.error !== undefined) {
+        serverErrors = errors.error;
+    }
     return(
         <div>
             LoginForm
+            {serverErrors}
             <form onSubmit={handleSubmit}>
                 <Field
                     name="username"
