@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import inputField from "../../common/InputField";
 
 const LoginForm = (props) => {
     const { handleSubmit, errors } = props;
@@ -10,17 +11,20 @@ const LoginForm = (props) => {
     return(
         <div>
             LoginForm
-            {serverErrors}
-            <form onSubmit={handleSubmit}>
+            <form className="container" onSubmit={handleSubmit}>
                 <Field
                     name="username"
-                    component="input"
-                    type="text" />
+                    component={inputField}
+                    type="text"
+                    label="Username" />
                 <Field
                     name="password"
-                    component="input"
-                    type="password" />
-                <p/><button type="submit"> Login </button>
+                    component={inputField}
+                    type="password"
+                    label="Password" />
+                <span className="text text-danger">{serverErrors}</span>
+                <p/><button className="btn btn-success"
+                            type="submit"> Login </button>
             </form>
         </div>
     )

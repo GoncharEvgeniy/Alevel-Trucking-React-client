@@ -21,7 +21,7 @@ export const login = (userCrendetion) => async dispatch => {
                 dispatch({
                     type: LOGIN,
                     payload: {},
-                    error: {error: 'bad login or password'}
+                    error: {error: 'Bad login or password'}
                 });
             }
         }
