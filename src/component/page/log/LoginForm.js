@@ -19,7 +19,7 @@ const minLength = min => value =>
         ? `Must be ${min} characters or more`
         : undefined;
 
-const minLength6 = minLength(6);
+const minLength6 = minLength(6); // TODO double check
 
 
 const LoginForm = (props) => {
