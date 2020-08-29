@@ -21,7 +21,6 @@ const minLength = min => value =>
 
 const minLength6 = minLength(6); // TODO double check
 
-
 const LoginForm = (props) => {
     const {handleSubmit, errors} = props;
     let serverErrors = '';
@@ -32,6 +31,7 @@ const LoginForm = (props) => {
         <div>
             LoginForm
             <form className="container" onSubmit={handleSubmit}>
+                <span className="text text-danger">{serverErrors}</span>
                 <div className="form-group">
                     <Field
                         name="username"
@@ -50,10 +50,11 @@ const LoginForm = (props) => {
                         validate={[required, maxLength15, minLength6]}
                     />
                 </div>
-                <span className="text text-danger">{serverErrors}</span>
-                <button className="btn btn-success"
-                        type="submit"> Login
-                </button>
+                <div>
+                    <button className="btn btn-success"
+                            type="submit"> Login
+                    </button>
+                </div>
             </form>
         </div>
     )
