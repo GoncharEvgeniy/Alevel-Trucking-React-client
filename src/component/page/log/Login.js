@@ -10,8 +10,10 @@ const Login = (props) => {
         props.login(values);
     }
 
+    // TODO fix style
     return(
         <div>
+            <h3>Welcome!</h3>
             <div>
                 <LoginForm onSubmit={handleLogin} errors={props.errors}/>
             </div>
