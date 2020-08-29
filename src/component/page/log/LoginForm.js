@@ -29,7 +29,6 @@ const LoginForm = (props) => {
     }
     return (
         <div>
-            LoginForm
             <form className="container" onSubmit={handleSubmit}>
                 <span className="text text-danger">{serverErrors}</span>
                 <div className="form-group">

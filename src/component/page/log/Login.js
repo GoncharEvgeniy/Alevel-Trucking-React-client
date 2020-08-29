@@ -12,7 +12,6 @@ const Login = (props) => {
 
     return(
         <div>
-            LOGIN
             <div>
                 <LoginForm onSubmit={handleLogin} errors={props.errors}/>
             </div>
