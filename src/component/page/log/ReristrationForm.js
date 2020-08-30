@@ -6,9 +6,14 @@ import {maxLength15, minLength6, required} from "../validation/FieldValidation";
 const RegistrationForm = (props) => {
     const {handleSubmit, errors} = props;
     /*TODO fix validation*/
+    let serverErrors = '';
+    if (errors !== undefined && errors.error !== undefined) {
+        serverErrors = errors.error;
+    }
     return (
         <div>
             <form className="container" onSubmit={handleSubmit}>
+                <span className="text text-danger">{serverErrors}</span>
                 <div className="form-group">
                     <Field
                         name="username"
