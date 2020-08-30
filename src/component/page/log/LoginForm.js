@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import inputField from "../../common/InputField";
-import {required, maxLength15, minLength6} from "../validation/FieldValidation";
+import {required} from "../validation/FieldValidation";
 
 const LoginForm = (props) => {
     const {handleSubmit, errors} = props;

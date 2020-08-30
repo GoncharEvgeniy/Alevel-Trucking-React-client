@@ -1,4 +1,4 @@
-import {LOGIN} from "./ActionType";
+import {LOGIN, REGISTRATION} from "./ActionType";
 import {URL_LOGIN} from "./ActionURL";
 import * as axios from "axios";
 import * as jwt from "jsonwebtoken";
@@ -26,4 +26,11 @@ export const login = (userCrendetion) => async dispatch => {
             }
         }
     )
+};
+
+export const register = (newUser) => async dispatch => {
+    console.log(newUser);
+    dispatch({
+        type: REGISTRATION
+    })
 };
