@@ -8,11 +8,13 @@ const maxLength = max => value =>
         ? `Must be ${max} characters or less`
         : undefined;
 
-export const maxLength15 = maxLength(15); // TODO double check
+export const maxLength15 = maxLength(15);
 
 const minLength = min => value =>
     value && value.length < min
         ? `Must be ${min} characters or more`
         : undefined;
 
-export const minLength6 = minLength(6); // TODO double check
+export const minLength4 = minLength(4);
+
+export const minLength5 = minLength(5);

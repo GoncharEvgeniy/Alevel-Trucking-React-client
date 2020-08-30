@@ -19,7 +19,7 @@ const LoginForm = (props) => {
                         component={inputField}
                         type="text"
                         label="Username"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required]}
                     />
                 </div>
                 <div className="form-group">
@@ -28,7 +28,7 @@ const LoginForm = (props) => {
                         component={inputField}
                         type="password"
                         label="Password"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required]}
                     />
                 </div>
                 <div>

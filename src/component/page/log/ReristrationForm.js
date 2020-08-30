@@ -1,11 +1,11 @@
 import React from 'react'
 import {Field, reduxForm} from "redux-form";
 import inputField from "../../common/InputField";
-import {maxLength15, minLength6, required} from "../validation/FieldValidation";
+import {maxLength15, minLength4, minLength5, required} from "../validation/FieldValidation";
 
 const RegistrationForm = (props) => {
     const {handleSubmit, errors} = props;
-    /*TODO fix validation*/
+    /*TODO fix validation for phone*/
     let serverErrors = '';
     if (errors !== undefined && errors.error !== undefined) {
         serverErrors = errors.error;
@@ -20,7 +20,7 @@ const RegistrationForm = (props) => {
                         component={inputField}
                         type="text"
                         label="Username"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required, minLength4, maxLength15]}
                     />
                 </div>
                 <div className="form-group">
@@ -29,7 +29,7 @@ const RegistrationForm = (props) => {
                         component={inputField}
                         type="password"
                         label="Password"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required, minLength5, maxLength15]}
                     />
                 </div>
                 <div className="form-group">
@@ -47,7 +47,7 @@ const RegistrationForm = (props) => {
                         component={inputField}
                         type="text"
                         label="First name"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required]}
                     />
                 </div>
                 <div className="form-group">
@@ -56,7 +56,7 @@ const RegistrationForm = (props) => {
                         component={inputField}
                         type="text"
                         label="Second name"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required]}
                     />
                 </div>
                 <div className="form-group">
@@ -65,7 +65,7 @@ const RegistrationForm = (props) => {
                         component={inputField}
                         type="text"
                         label="Last name"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required]}
                     />
                 </div>
                 <div className="form-group">
