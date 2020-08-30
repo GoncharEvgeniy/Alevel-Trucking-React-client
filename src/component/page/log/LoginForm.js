@@ -1,25 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 import inputField from "../../common/InputField";
-
-const required = value =>
-    value
-        ? undefined
-        : 'Required';
-
-const maxLength = max => value =>
-    value && (value.length > max)
-        ? `Must be ${max} characters or less`
-        : undefined;
-
-const maxLength15 = maxLength(15); // TODO double check
-
-const minLength = min => value =>
-    value && value.length < min
-        ? `Must be ${min} characters or more`
-        : undefined;
-
-const minLength6 = minLength(6); // TODO double check
+import {required} from "../validation/FieldValidation";
 
 const LoginForm = (props) => {
     const {handleSubmit, errors} = props;
@@ -37,7 +19,7 @@ const LoginForm = (props) => {
                         component={inputField}
                         type="text"
                         label="Username"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required]}
                     />
                 </div>
                 <div className="form-group">
@@ -46,7 +28,7 @@ const LoginForm = (props) => {
                         component={inputField}
                         type="password"
                         label="Password"
-                        validate={[required, maxLength15, minLength6]}
+                        validate={[required]}
                     />
                 </div>
                 <div>
