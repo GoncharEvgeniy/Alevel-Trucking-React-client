@@ -72,7 +72,7 @@ const RegistrationForm = (props) => {
                     <Field
                         name="phone"
                         component={inputField}
-                        type="text"
+                        type="tel"
                         label="Phone"
                         validate={[required]}
                     />
