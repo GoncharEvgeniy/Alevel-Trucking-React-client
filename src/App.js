@@ -22,7 +22,7 @@ const App = (props) => {
                 </h1>
             </div>
             <div>
-                <NavBar />
+                <NavBar logout={logout}/>
             </div>
             <div>
                 <Switch>
@@ -30,7 +30,6 @@ const App = (props) => {
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/registration' component={Registration} />
                     <Route exact path='/home' component={Home} />
-                    <Route exact path='/logout' />
                     <Route component={NotFound} />
                 </Switch>
             </div>

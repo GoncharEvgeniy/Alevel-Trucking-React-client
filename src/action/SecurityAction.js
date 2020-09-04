@@ -1,4 +1,4 @@
-import {LOGIN, REGISTRATION} from "./ActionType";
+import {LOGIN, LOGOUT, REGISTRATION} from "./ActionType";
 import {URL_LOGIN} from "./ActionURL";
 import * as axios from "axios";
 import * as jwt from "jsonwebtoken";
@@ -33,4 +33,12 @@ export const register = (newUser) => async dispatch => {
     dispatch({
         type: REGISTRATION
     })
+};
+
+export const logout = () => async dispatch => {
+    localStorage.removeItem('LoginToken');
+    dispatch({
+        type: LOGOUT,
+        payload: {}
+    });
 };
