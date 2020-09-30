@@ -9,6 +9,7 @@ import Home from "./component/page/home/Home";
 import createHistory from "history/createBrowserHistory";
 import NotFound from "./component/page/notFound/NotFound";
 import {connect} from "react-redux";
+import {logout} from "./action/SecurityAction";
 
 const history = createHistory();
 
