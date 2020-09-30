@@ -8,10 +8,11 @@ import Registration from "./component/page/log/Registration";
 import Home from "./component/page/home/Home";
 import createHistory from "history/createBrowserHistory";
 import NotFound from "./component/page/notFound/NotFound";
+import {connect} from "react-redux";
 
 const history = createHistory();
 
-function App() {
+const App = (props) => {
   return (
     <BrowserRouter history={history} basename={'/tracking'}>
         <div>
@@ -21,7 +22,7 @@ function App() {
                 </h1>
             </div>
             <div>
-                <NavBar />
+                <NavBar logout={logout}/>
             </div>
             <div>
                 <Switch>
@@ -29,7 +30,6 @@ function App() {
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/registration' component={Registration} />
                     <Route exact path='/home' component={Home} />
-                    <Route exact path='/logout' />
                     <Route component={NotFound} />
                 </Switch>
             </div>
@@ -38,4 +38,4 @@ function App() {
   );
 };
 
-export default App;
+export default connect()(App);
