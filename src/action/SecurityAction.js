@@ -3,7 +3,7 @@ import {URL_LOGIN} from "./ActionURL";
 import * as axios from "axios";
 import * as jwt from "jsonwebtoken";
 
-export const login = (userCrendetion) => async dispatch => {
+export const login = (userCrendetion, history) => async dispatch => {
     axios.post(URL_LOGIN, userCrendetion).then(
         response => {
             let token = response.headers.authorization.substring(7);
@@ -14,6 +14,7 @@ export const login = (userCrendetion) => async dispatch => {
                 type: LOGIN,
                 payload: user
             });
+            history.push('/home');
         },
         error => {
             console.log(error);
@@ -36,6 +37,7 @@ export const register = (newUser) => async dispatch => {
 };
 
 export const logout = () => async dispatch => {
+    console.log('logout');
     localStorage.removeItem('LoginToken');
     dispatch({
         type: LOGOUT,

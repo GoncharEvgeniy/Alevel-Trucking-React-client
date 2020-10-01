@@ -1,9 +1,13 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import {connect} from "react-redux";
+import PropTypes from 'prop-types';
+import {logout} from "../action/SecurityAction";
 
 const NavBar = (props) => {
 
     async function handleLogout() {
+        console.log('handleLogout');
         props.logout();
     };
 
@@ -22,4 +26,8 @@ const NavBar = (props) => {
     );
 };
 
-export default NavBar;
+NavBar.propTypes = {
+    logout: PropTypes.func.isRequired
+}
+
+export default connect(undefined, {logout}) (NavBar);

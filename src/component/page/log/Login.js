@@ -7,7 +7,7 @@ import {login} from "../../../action/SecurityAction";
 const Login = (props) => {
 
     async function handleLogin(values) {
-        props.login(values);
+        props.login(values, props.history);
     }
 
     // TODO fix style
