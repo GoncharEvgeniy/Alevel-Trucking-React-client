@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import UsersTable from "./UsersTable";
 import PropTypes from "prop-types";
-import {getUsers} from "../../../action/AdminAction";
+import {getUsers} from "../../../../action/AdminAction";
 import {connect} from "react-redux";
 
 const AdminHome = (props) => {

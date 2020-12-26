@@ -1,8 +1,8 @@
 import React from 'react';
-import CustomerHome from "./CustomerHome";
-import ManagerHome from "./ManagerHome";
-import DriverHome from "./DriverHome";
-import AdminHome from "./AdminHome_";
+import CustomerHome from "./customer/CustomerHome";
+import ManagerHome from "./manager/ManagerHome";
+import DriverHome from "./driver/DriverHome";
+import AdminHome from "./admin/AdminHome_";
 
 const Home = () => {
     return (
@@ -10,9 +10,9 @@ const Home = () => {
             HOME
             <div>
                 <CustomerHome />
-                <ManagerHome />
+ {/*               <ManagerHome />
                 <DriverHome />
-                <AdminHome />
+                <AdminHome />            */}
             </div>
         </div>
     )
