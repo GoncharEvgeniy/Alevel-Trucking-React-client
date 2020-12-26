@@ -10,9 +10,9 @@ const Home = () => {
             HOME
             <div>
                 <CustomerHome />
- {/*               <ManagerHome />
-                <DriverHome />
-                <AdminHome />            */}
+                <ManagerHome />
+                <DriverHome />                  
+                <AdminHome />
             </div>
         </div>
     )
